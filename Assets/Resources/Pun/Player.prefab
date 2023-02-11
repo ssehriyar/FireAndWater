@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6204485309221271434}
   - component: {fileID: 6204485309221271432}
   - component: {fileID: 6204485309221271435}
+  - component: {fileID: 2115591905456008620}
   - component: {fileID: 9089449816692847595}
-  - component: {fileID: 6884395631772006319}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -64,14 +64,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9e06fe84933d84e8c91e264ea7a033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 15
-  _jumpForce: 35
-  _fallAcceleration: 0.2
-  _fallMaxSpeed: 20
+  _moveSpeed: 10
+  _jumpForce: 30
+  _fallAcceleration: 100
+  _gravity: 9
+  _fallMaxSpeed: 50
   _groundCheckRadius: 0.1
   _groundLayerMask:
     serializedVersion: 2
     m_Bits: 32768
+  _capsuleCollider: {fileID: 6204485309502175618}
+--- !u!114 &2115591905456008620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204485309221271437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11137618aed84448a91d6118a084798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _smoothPos: 10
+  _teleportDistance: 3
 --- !u!114 &9089449816692847595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,26 +107,10 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 6884395631772006319}
+  - {fileID: 2115591905456008620}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &6884395631772006319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6204485309221271437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 0
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &6204485309502175620
 GameObject:
   m_ObjectHideFlags: 0

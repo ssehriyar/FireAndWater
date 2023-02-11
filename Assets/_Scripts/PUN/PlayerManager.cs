@@ -7,7 +7,7 @@ namespace MyGame
 	public class PlayerManager : MonoBehaviour
 	{
 		[SerializeField] private GameObject _playerPrefab;
-		//[SerializeField] private PositionManger _positionManager;
+		[SerializeField] private PositionManager _positionManager;
 
 		private void Start()
 		{
@@ -16,10 +16,10 @@ namespace MyGame
 
 		private void CreatePlayer()
 		{
-			//PhotonNetwork.Instantiate(
-			//	Path.Combine("Prefabs", _playerPrefab.name),
-			//	_positionManager.GetPlayerPosition(PhotonNetwork.LocalPlayer.ActorNumber - 1),
-			//	Quaternion.identity);
+			PhotonNetwork.Instantiate(
+				Path.Combine("Pun", _playerPrefab.name),
+				_positionManager.GetPlayerPosition(PhotonNetwork.LocalPlayer.ActorNumber - 1),
+				Quaternion.identity);
 		}
 	}
 }
